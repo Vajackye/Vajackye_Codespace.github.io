@@ -29,7 +29,7 @@
 <meta property="og:description" content="筛法的原理 质因数分解：任何大于 1 的正整数都能 唯一 的分解为有限个质数的乘积。根据这一定理任何一个合数都可以被分解成几个质数相乘的形式。  可用于：求解约数个数，约数的和。因为某个正整数的约数也肯定等于质因数分解后的不同幂的乘积。  方法一(试除法，效率一般)：如360：360&#x2F;2 &#x3D; 180&#x2F;2 &#x3D; 90&#x2F;2 &#x3D; 45&#x2F;">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2024-03-18T11:16:06.000Z">
-<meta property="article:modified_time" content="2024-03-19T14:14:05.288Z">
+<meta property="article:modified_time" content="2024-03-20T00:52:53.130Z">
 <meta property="article:author" content="Vajackye">
 <meta name="twitter:card" content="summary">
 
@@ -244,7 +244,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2024-03-19 22:14:05" itemprop="dateModified" datetime="2024-03-19T22:14:05+08:00">2024-03-19</time>
+      <time title="修改时间：2024-03-20 08:52:53" itemprop="dateModified" datetime="2024-03-20T08:52:53+08:00">2024-03-20</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -301,6 +301,10 @@
 </li>
 <li><p><strong>题种三</strong>（欧拉筛求最小质因数+素数）：见代码：欧拉筛法部分，将vis改为记录素数即可，将vis的倍数被prime赋值（最小质因数）即可。</p>
 </li>
+</ul>
+<span id="more"></span>
+
+<ul>
 <li><p>如本题：求一个正整数的约数的个数</p>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//法1：质因数分解</span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">  <span class="type">int</span> n;</span><br><span class="line">  <span class="type">int</span> ans = <span class="number">1</span>;</span><br><span class="line">  cin&gt;&gt;n;</span><br><span class="line">  <span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">2</span>; i*i &lt;= n; i++)</span><br><span class="line">  &#123;</span><br><span class="line">    <span class="type">int</span> tmp = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">while</span>(n % i == <span class="number">0</span>) <span class="comment">// 缩小n，加快速度，毕竟如 360 = 2^3 * 3^2 * 5^1, 当除了3次2，则剩下的数就缩小了。注：肯定都是质数，因为如4，已经被2除过了，所以%4 != 0, 即合数都不可能出现，已被拆分为质数了</span></span><br><span class="line">    &#123;</span><br><span class="line">      tmp++;</span><br><span class="line">      n /= i;<span class="comment">//缩小</span></span><br><span class="line">    &#125;</span><br><span class="line">    ans *= (tmp + <span class="number">1</span>);<span class="comment">//+1是因为0次幂</span></span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">if</span>(n != <span class="number">1</span>)</span><br><span class="line">    ans *= (<span class="number">1</span>+<span class="number">1</span>); <span class="comment">//最后一个质数，比如上面的5，单独的</span></span><br><span class="line">  cout &lt;&lt; ans;</span><br><span class="line">  <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">  <span class="comment">//法2：暴力求解 i*i &lt;= n</span></span><br><span class="line">  <span class="comment">/*</span></span><br><span class="line"><span class="comment">  int main()</span></span><br><span class="line"><span class="comment">  &#123;</span></span><br><span class="line"><span class="comment">    int n;</span></span><br><span class="line"><span class="comment">    int ans = 0;</span></span><br><span class="line"><span class="comment">    cin&gt;&gt;n;</span></span><br><span class="line"><span class="comment">    for(int i = 2; i*i &lt;= n; i++)</span></span><br><span class="line"><span class="comment">    &#123;</span></span><br><span class="line"><span class="comment">      if( n % i == 0)//找约数,加法，不存在合数被质数拆分</span></span><br><span class="line"><span class="comment">        ans += 2;</span></span><br><span class="line"><span class="comment">      if( i * i == n)</span></span><br><span class="line"><span class="comment">        ans--;</span></span><br><span class="line"><span class="comment">    &#125;</span></span><br><span class="line"><span class="comment">    cout&lt;&lt;ans;</span></span><br><span class="line"><span class="comment">    return 0;</span></span><br><span class="line"><span class="comment">  &#125;</span></span><br><span class="line"><span class="comment">  */</span></span><br></pre></td></tr></table></figure>
 
@@ -554,6 +558,12 @@ setInterval("createtime()",250);
   <script data-pjax async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
 
 
+
+
+  
+
+  <script class="next-config" data-name="enableMath" type="application/json">false</script><script class="next-config" data-name="mathjax" type="application/json">{"enable":true,"tags":"none","js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-mml-chtml.js","integrity":"sha256-MASABpB4tYktI2Oitl4t+78w/lyA+D7b/s9GEP0JOGI="}}</script>
+<script src="/js/third-party/math/mathjax.js"></script>
 
 
 
