@@ -741,16 +741,15 @@
 </li>
 <li><p>求欧拉函数</p>
 <ul>
-<li><p>$φ(n) &#x3D; 1到n-1之间的与n互素（即无公因数，除了1）的数的个数，即φ(6) &#x3D; 2 ，即(1,2,3,4,5中，1，5于6互素)$</p>
+<li>$φ(n) &#x3D; 1到n-1之间的与n互素（即无公因数，除了1）的数的个数，即φ(6) &#x3D; 2 ，即(1,2,3,4,5中，1，5于6互素)$</li>
+</ul>
 </li>
-<li><p>$求φ(N)的欧拉函数时，先对N分解质因数（即素数）&#x3D;p_1^{α_1}p_2^{α_2}….p_k^{α_k}（与幂数无关）,\则φ(N)&#x3D;N(1-\frac{1}{p_1})(1-\frac{1}{p_2})…(1-\frac{1}{p_k})（容斥原理）$</p>
+<li><p>$求φ(N)的欧拉函数时，先对N分解质因数（即素数）&#x3D;p_1^{α_1}p_2^{α_2}….p_k^{α_k}（与幂数无关）,则φ(N)&#x3D;N(1-\frac{1}{p_1})(1-\frac{1}{p_2})…(1-\frac{1}{p_k})（容斥原理）$</p>
 <ul>
-<li>例子：$φ(6)&#x3D;2<em>3（2和3都是素数），φ(6)&#x3D;6</em>(1-\frac{1}{2})(1-\frac{1}{3})&#x3D;2$</li>
+<li>$例子： φ(6)&#x3D;2<em>3（2和3都是素数），φ(6)&#x3D;6</em>(1-\frac{1}{2})(1-\frac{1}{3})&#x3D;2 $</li>
 </ul>
 </li>
 <li><p>欧拉函数用容斥原理证明：$先对p_1^{α_1}p_2^{α_2}….p_k^{α_k}中的质数p_1…p_k，去掉它们在1到n中的所有倍数，在把去掉多次的数加回来\（eg:p_1p_2的倍数被减去2次），再删去p_1p_2p_3的倍数…$</p>
-</li>
-</ul>
 <figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="type">int</span> <span class="title">phi</span><span class="params">(<span class="type">int</span> x)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="type">int</span> res = x;</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">2</span>; i * i &lt;= x; i++)</span><br><span class="line">        <span class="keyword">if</span>(x % i == <span class="number">0</span>)</span><br><span class="line">        &#123;</span><br><span class="line">            res = res / i * (i - <span class="number">1</span>);</span><br><span class="line">            <span class="keyword">while</span>(x % i == <span class="number">0</span>) x /= i;</span><br><span class="line">		&#125;</span><br><span class="line">    <span class="keyword">if</span>(x &gt; <span class="number">1</span>) res = res / x * (x - <span class="number">1</span>);</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">return</span> res;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 
