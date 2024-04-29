@@ -151,7 +151,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives">
-          <span class="site-state-item-count">16</span>
+          <span class="site-state-item-count">17</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -194,6 +194,122 @@
     </div>
 
     <div class="main-inner index posts-expand">
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://example.com/2024/04/24/hyl%E7%9A%84STL%E4%BD%9C%E4%B8%9A/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="Vajackye">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Vajackye's lonely world">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | Vajackye's lonely world">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2024/04/24/hyl%E7%9A%84STL%E4%BD%9C%E4%B8%9A/" class="post-title-link" itemprop="url">hyl的STL作业</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2024-04-24 14:24:07" itemprop="dateCreated datePublished" datetime="2024-04-24T14:24:07+08:00">2024-04-24</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2024-04-29 09:36:30" itemprop="dateModified" datetime="2024-04-29T09:36:30+08:00">2024-04-29</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/SCNU%E7%9A%84hyl%E7%AE%97%E6%B3%95%E8%89%BA%E6%9C%AF%E4%BD%9C%E4%B8%9A/" itemprop="url" rel="index"><span itemprop="name">SCNU的hyl算法艺术作业</span></a>
+        </span>
+    </span>
+
+  
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="本文字数">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">本文字数：</span>
+      <span>1.6k</span>
+    </span>
+    <span class="post-meta-item" title="阅读时长">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">阅读时长 &asymp;</span>
+      <span>3 分钟</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <ul>
+<li><p>zoj1117</p>
+<ul>
+<li>难点：哈夫曼树。建树很慢。<strong>回忆一下哈夫曼树的性质！：所有非叶子节点的权值之和&#x3D;&#x3D;编码长度</strong></li>
+</ul>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;queue&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;unordered_map&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;iomanip&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line">string alp;</span><br><span class="line">unordered_map&lt;<span class="type">char</span>, <span class="type">int</span>&gt; mp;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">huffman</span><span class="params">(<span class="type">int</span> &amp; lat)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">0</span>; i &lt; alp.<span class="built_in">size</span>(); i++)</span><br><span class="line">    &#123;</span><br><span class="line">        mp[alp[i]]++;</span><br><span class="line">    &#125;</span><br><span class="line">    priority_queue&lt;<span class="type">int</span>, vector&lt;<span class="type">int</span>&gt;, greater&lt;<span class="type">int</span>&gt; &gt; q;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">auto</span> c: mp)</span><br><span class="line">    &#123;</span><br><span class="line">        q.<span class="built_in">push</span>(c.second);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//所有非叶子节点的权值之和就是编码的长度。</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">//特判1，因为1不进入while</span></span><br><span class="line">    <span class="keyword">if</span>(q.<span class="built_in">size</span>() == <span class="number">1</span>) lat += q.<span class="built_in">top</span>();</span><br><span class="line">    <span class="keyword">while</span>(q.<span class="built_in">size</span>() &gt; <span class="number">1</span>)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="type">int</span> a = q.<span class="built_in">top</span>(); q.<span class="built_in">pop</span>();</span><br><span class="line">        <span class="type">int</span> b = q.<span class="built_in">top</span>(); q.<span class="built_in">pop</span>();</span><br><span class="line">        lat += (a+b);</span><br><span class="line">        q.<span class="built_in">push</span>(a+b);</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    mp.<span class="built_in">clear</span>();</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> ;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">while</span>(cin&gt;&gt;alp &amp;&amp; alp != <span class="string">&quot;END&quot;</span>)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="type">int</span> bef = <span class="number">8</span> * alp.<span class="built_in">size</span>();</span><br><span class="line">        <span class="type">int</span> lat = <span class="number">0</span>;</span><br><span class="line">        <span class="built_in">huffman</span>(lat);</span><br><span class="line">        cout &lt;&lt; bef &lt;&lt; <span class="string">&quot; &quot;</span>; </span><br><span class="line">        cout&lt;&lt; lat &lt;&lt;<span class="string">&quot; &quot;</span>;</span><br><span class="line">        cout&lt;&lt;fixed&lt;&lt;<span class="built_in">setprecision</span>(<span class="number">1</span>)&lt;&lt;bef/(lat*<span class="number">1.0</span>)&lt;&lt;endl;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+
+</li>
+<li><p>poj2503</p>
+<ul>
+<li>难只难在输入。复习一下<code>getline</code>用法。</li>
+</ul>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;unordered_map&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;string&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line">unordered_map&lt;string, string&gt; mp;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    string all;</span><br><span class="line">    <span class="keyword">while</span>(<span class="built_in">getline</span>(cin, all) &amp;&amp; !all.<span class="built_in">empty</span>())</span><br><span class="line">    &#123;</span><br><span class="line">        string a, b;</span><br><span class="line">        <span class="type">int</span> p = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">0</span>; i &lt; all.<span class="built_in">size</span>(); i++)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">if</span>(all[i] == <span class="string">&#x27; &#x27;</span>) <span class="keyword">break</span>;</span><br><span class="line">            a += all[i];</span><br><span class="line">            p++;</span><br><span class="line">        &#125;</span><br><span class="line">        p++;</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> i = p; i &lt; all.<span class="built_in">size</span>(); i++)</span><br><span class="line">        &#123;</span><br><span class="line">            b += all[i];</span><br><span class="line">        &#125;</span><br><span class="line">        mp[b] = a;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    string ask;</span><br><span class="line">    <span class="keyword">while</span>(<span class="built_in">getline</span>(cin, ask) &amp;&amp; !ask.<span class="built_in">empty</span>())</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">if</span>(mp.<span class="built_in">find</span>(ask) == mp.<span class="built_in">end</span>()) cout&lt;&lt;<span class="string">&quot;eh&quot;</span>&lt;&lt;endl;</span><br><span class="line">        <span class="keyword">else</span> cout&lt;&lt;mp[ask]&lt;&lt;endl;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure></li>
+</ul>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
 
     
 
@@ -1667,113 +1783,6 @@ emplace();//用传入的参数调用构造函数，在栈顶生成对象
 </li>
 </ul>
 
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://example.com/2024/03/19/%E6%95%B0%E8%AE%BA%E6%9D%BF%E5%AD%90/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.jpg">
-      <meta itemprop="name" content="Vajackye">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Vajackye's lonely world">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | Vajackye's lonely world">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2024/03/19/%E6%95%B0%E8%AE%BA%E6%9D%BF%E5%AD%90/" class="post-title-link" itemprop="url">数论板子</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-
-      <time title="创建时间：2024-03-19 22:17:19" itemprop="dateCreated datePublished" datetime="2024-03-19T22:17:19+08:00">2024-03-19</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar-check"></i>
-      </span>
-      <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2024-04-12 22:33:44" itemprop="dateModified" datetime="2024-04-12T22:33:44+08:00">2024-04-12</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">分类于</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/%E7%AE%97%E6%B3%95%E6%9D%BF%E5%AD%90/" itemprop="url" rel="index"><span itemprop="name">算法板子</span></a>
-        </span>
-    </span>
-
-  
-    <span class="post-meta-break"></span>
-    <span class="post-meta-item" title="本文字数">
-      <span class="post-meta-item-icon">
-        <i class="far fa-file-word"></i>
-      </span>
-      <span class="post-meta-item-text">本文字数：</span>
-      <span>12k</span>
-    </span>
-    <span class="post-meta-item" title="阅读时长">
-      <span class="post-meta-item-icon">
-        <i class="far fa-clock"></i>
-      </span>
-      <span class="post-meta-item-text">阅读时长 &asymp;</span>
-      <span>22 分钟</span>
-    </span>
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <h3 id="数学小知识集合"><a href="#数学小知识集合" class="headerlink" title="数学小知识集合"></a>数学小知识集合</h3><p>$$<br>1.\textbf{求所有元素的最大公约数}\<br>假设数组中的数分别为 a1, a2, …, an，它们的最大公约数为 d。那么可以表示成 ai &#x3D; di * bi，其中bi为除数。\同时，sum &#x3D; a1 + a2 + … + an &#x3D; d * (b1 + b2 + … + bn)。\<br>根据这个性质，数组元素的和sum一定是最大公约数 d 的倍数。\因此，如果我们能够通过对数组元素求和得到 sum，就可以通过对 sum 求最大公约数，从而得到所有元素的最大公约数。\\<br>2.<br>$$</p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2024/03/19/%E6%95%B0%E8%AE%BA%E6%9D%BF%E5%AD%90/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
       
     </div>
 
